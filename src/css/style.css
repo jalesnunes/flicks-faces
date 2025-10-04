@@ -1,0 +1,36 @@
+:root {
+  /* fonts */
+  --font-heading: 'Poppins', sans-serif;       /* para títulos e menus */
+  --font-heading-weight: 700;                  /* negrito */
+  
+  --font-link: 'Poppins', sans-serif;          /* para links e itens clicáveis */
+  --font-link-weight: 400;                     /* regular */
+  --font-link-style: italic;                   /* itálico */
+  
+  --font-body: 'Roboto', sans-serif;           /* para corpo de texto */
+  --font-body-weight: 400;   
+
+  /* colors */
+  --primary-color: #444444;
+  --secondary-color: #2C3E50;
+  --tertiary-color: #FF6B6B;
+  --white: #FFFFFF;
+  ---color-accent-cyan: #368F8B;
+
+  /* sizes */
+  --font-base: 16px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  color: var(--dark-grey);
+}
