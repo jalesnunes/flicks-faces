@@ -15,7 +15,7 @@
   --secondary-color: #2C3E50;
   --tertiary-color: #FF6B6B;
   --white: #FFFFFF;
-  ---color-accent-cyan: #368F8B;
+  --color-accent-cyan: #368F8B;
 
   /* sizes */
   --font-base: 16px;
@@ -32,5 +32,17 @@
 body {
   font-family: var(--font-body);
   font-size: var(--font-base);
-  color: var(--dark-grey);
+  color: var(--primary-color);
 }
+
+.btn-outline {
+  color: var(--tertiary-color);
+  border-color: var(--tertiary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--tertiary-color);
+  color: var(--white);
+  border-color: var(--tertiary-color);
+}
+
