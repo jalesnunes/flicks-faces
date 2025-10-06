@@ -35,6 +35,14 @@ body {
   color: var(--primary-color);
 }
 
+.flicks-logo {
+  color: var(--color-accent-cyan);
+}
+
+.faces-logo {
+  color: var(--tertiary-color);
+}
+
 .btn-outline {
   color: var(--tertiary-color);
   border-color: var(--tertiary-color);
