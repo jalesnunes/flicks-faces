@@ -1,4 +1,3 @@
-// Import Bootstrap CSS e JS
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../../public/assets/bootstrap/bootstrap.min.css';
+import '../../public/assets/bootstrap/bootstrap.bundle.min.js';
 import '../css/style.css';
