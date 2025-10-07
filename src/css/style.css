@@ -1,21 +1,21 @@
 :root {
   /* fonts */
-  --font-heading: 'Poppins', sans-serif;       /* para títulos e menus */
-  --font-heading-weight: 700;                  /* negrito */
-  
-  --font-link: 'Poppins', sans-serif;          /* para links e itens clicáveis */
-  --font-link-weight: 400;                     /* regular */
-  --font-link-style: italic;                   /* itálico */
-  
-  --font-body: 'Roboto', sans-serif;           /* para corpo de texto */
-  --font-body-weight: 400;   
+  --font-heading: "Poppins", sans-serif; /* para títulos e menus */
+  --font-heading-weight: 700; /* negrito */
+
+  --font-link: "Poppins", sans-serif; /* para links e itens clicáveis */
+  --font-link-weight: 400; /* regular */
+  --font-link-style: italic; /* itálico */
+
+  --font-body: "Roboto", sans-serif; /* para corpo de texto */
+  --font-body-weight: 400;
 
   /* colors */
   --primary-color: #444444;
-  --secondary-color: #2C3E50;
-  --tertiary-color: #FF6B6B;
-  --white: #FFFFFF;
-  --color-accent-cyan: #368F8B;
+  --secondary-color: #2c3e50;
+  --tertiary-color: #ff6b6b;
+  --white: #ffffff;
+  --color-accent-cyan: #368f8b;
 
   /* sizes */
   --font-base: 16px;
@@ -33,6 +33,27 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-base);
   color: var(--primary-color);
+}
+
+P {
+  color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  color: var(--secondary-color);
+}
+
+/* Header Styles */
+
+header ul li:hover {
+  color: var(--color-accent-cyan);
 }
 
 .flicks-logo {
@@ -53,4 +74,3 @@ body {
   color: var(--white);
   border-color: var(--tertiary-color);
 }
-
