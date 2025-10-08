@@ -52,7 +52,11 @@ h6 {
 
 /* Header Styles */
 
-header ul li:hover {
+.navbar-link-custom {
+  color: var(--primary-color);
+}
+
+.navbar-link-custom:hover {
   color: var(--color-accent-cyan);
 }
 
@@ -74,3 +78,11 @@ header ul li:hover {
   color: var(--white);
   border-color: var(--tertiary-color);
 }
+
+/* Cards */
+.bg-star, .bg-page-index {
+  background-color: var(--color-accent-cyan);
+  color: var(--white);
+}
+
+
