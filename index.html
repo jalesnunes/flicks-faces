@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -83,82 +83,21 @@
         <button class="btn btn-outline" id="nextMovies">Next →</button>
       </div>
 
-      <h1 class="d-flex mt-4">TV Shows</h1>
+      <h1 class="d-flex mt-5">TV Shows</h1>
       <section>
-        <ul class="d-flex flex-wrap gap-4 justify-content-center">
-          <li class="list-group-item">
-            <div class="card" style="width: 18rem">
-              <img
-                src="https://picsum.photos/400/300"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-outline">Go somewhere</a>
-              </div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="card" style="width: 18rem">
-              <img
-                src="https://picsum.photos/400/300"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-outline">Go somewhere</a>
-              </div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="card" style="width: 18rem">
-              <img
-                src="https://picsum.photos/400/300"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-outline">Go somewhere</a>
-              </div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="card" style="width: 18rem">
-              <img
-                src="https://picsum.photos/400/300"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-outline">Go somewhere</a>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <ul
+          class="d-flex flex-wrap gap-4 justify-content-center"
+          id="tv-list"
+        ></ul>
       </section>
+
+      <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+        <button class="btn btn-outline" id="prevTV">← Previous</button>
+
+        <span class="badge bg-page-index fs-6" id="tvPageInfo">1 / 1</span>
+
+        <button class="btn btn-outline" id="nextTV">Next →</button>
+      </div>
     </main>
 
     <!-- Scripts do Bootstrap e do nosso código -->
