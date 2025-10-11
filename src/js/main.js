@@ -7,10 +7,10 @@ const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 const BEARER_TOKEN =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZjQ4YzM4ZjJmYmZlYmM1MzY2OGUzMTdhOGUzZjhlYyIsIm5iZiI6MTc1OTcyMDM1NS4zNywic3ViIjoiNjhlMzMzYTNjZDM2ZmY5Y2FiYzI3M2E3Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.fQ20hVsTNi2ZO8cFhUSuHJfW1pcT-3bY_yqJJGwnkc0";
 
-// Global variables to control pagination on movies 
+// Global variables to control pagination on movies
 let actualMovies = [];
 let pageIndex = 0;
-let moviesPerPage = 4; 
+let moviesPerPage = 4;
 
 // Global variables to control pagination on TV shows
 let actualTVShows = [];
@@ -152,7 +152,7 @@ function createMovieCard(movie) {
                     </div>
                     <p class="card-text">${description}</p>
                 </div>
-                <a href="#" class="btn btn-outline mt-auto w-100">Show Details</a>
+                <a href="src/pages/details.html?type=movie&id=${movie.id}" class="btn btn-outline mt-auto w-100">Show Details</a>
             </div>
         </div>
     </li>
@@ -190,7 +190,7 @@ function createTVShowCard(show) {
                     </div>
                     <p class="card-text">${description}</p>
                 </div>
-                <a href="#" class="btn btn-outline mt-auto w-100">Show Details</a>
+                <a  href="src/pages/details.html?type=tv&id=${show.id}" class="btn btn-outline mt-auto w-100">Show Details</a>
             </div>
         </div>
     </li>
@@ -202,7 +202,6 @@ function previousPage() {
   if (pageIndex > 0) {
     pageIndex -= moviesPerPage;
     showMovies();
-    window.scrollTo(0, 0); // Come back to top of the page
   }
 }
 
@@ -213,7 +212,6 @@ function nextPage() {
   if (pageIndex < maxIndice) {
     pageIndex += moviesPerPage;
     showMovies();
-    window.scrollTo(0, 0); // come back to top of the page
   }
 }
 
@@ -222,7 +220,6 @@ function previousTVPage() {
   if (tvPageIndex > 0) {
     tvPageIndex -= tvShowsPerPage;
     showTVShows();
-    window.scrollTo(0, 0); // Come back to top of the page
   }
 }
 
@@ -233,7 +230,6 @@ function nextTVPage() {
   if (tvPageIndex < maxIndice) {
     tvPageIndex += tvShowsPerPage;
     showTVShows();
-    window.scrollTo(0, 0); // come back to top of the page
   }
 }
 
