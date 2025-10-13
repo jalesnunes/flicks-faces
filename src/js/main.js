@@ -287,6 +287,90 @@ function updateTVBtn() {
   pageInfo.textContent = actualPage + " / " + totalPages;
 }
 
+// ==================== SEARCH FUNCTIONALITY ====================
+
+// Function to search for movies and TV shows
+function searchContent(query) {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: "Bearer " + BEARER_TOKEN,
+    },
+  };
+
+  // Show loading message
+  const movieList = document.getElementById("movies-list");
+  const tvList = document.getElementById("tv-list");
+  
+  movieList.innerHTML = '<li class="text-center p-5"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-3">Searching...</p></li>';
+  tvList.innerHTML = '';
+
+  // Search using multi endpoint (searches movies AND tv shows)
+  fetch(BASE_URL + "/search/multi?query=" + encodeURIComponent(query) + "&language=en-US&page=1", options)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Search results:", data);
+      displaySearchResults(data.results);
+    })
+    .catch((error) => {
+      console.error("Error searching:", error);
+      movieList.innerHTML = '<li class="text-center p-5 text-danger">Error searching. Please try again.</li>';
+    });
+}
+
+// Function to display search results
+function displaySearchResults(results) {
+  const movieList = document.getElementById("movies-list");
+  const tvList = document.getElementById("tv-list");
+
+  // Clear both lists
+  movieList.innerHTML = "";
+  tvList.innerHTML = "";
+
+  // Separate results by type
+  const movies = results.filter(item => item.media_type === 'movie');
+  const tvShows = results.filter(item => item.media_type === 'tv');
+
+  // If no results found
+  if (results.length === 0) {
+    movieList.innerHTML = '<li class="text-center p-5"><h3>No results found</h3><p>Try searching with different keywords</p></li>';
+    return;
+  }
+
+  // Show movies
+  if (movies.length > 0) {
+    movies.forEach(movie => {
+      const card = createMovieCard(movie);
+      movieList.innerHTML += card;
+    });
+  } else {
+    movieList.innerHTML = '<li class="text-center p-3 text-muted">No movies found</li>';
+  }
+
+  // Show TV shows
+  if (tvShows.length > 0) {
+    tvShows.forEach(show => {
+      const card = createTVShowCard(show);
+      tvList.innerHTML += card;
+    });
+  } else {
+    tvList.innerHTML = '<li class="text-center p-3 text-muted">No TV shows found</li>';
+  }
+
+  // Scroll to results
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Function to clear search and show original content
+function clearSearch() {
+  document.getElementById("searchInput").value = "";
+  pageIndex = 0;
+  tvPageIndex = 0;
+  searchMovies();
+  searchTVShows();
+}
+
 // when the page is loaded, search and show movies and TV shows
 window.addEventListener("DOMContentLoaded", function () {
   searchMovies();
@@ -304,5 +388,25 @@ window.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     showMovies();
     showTVShows();
+  });
+
+  // Add search functionality
+  const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
+  
+  searchForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent page reload
+    const query = searchInput.value.trim();
+    
+    if (query !== "") {
+      searchContent(query);
+    }
+  });
+
+  // Clear search when input is empty
+  searchInput.addEventListener("input", function() {
+    if (this.value === "") {
+      clearSearch();
+    }
   });
 });
