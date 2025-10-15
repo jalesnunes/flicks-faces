@@ -48,11 +48,13 @@
                 <a class="nav-link navbar-link-custom" href="#">TV Shows</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link navbar-link-custom" href="#">Favorites</a>
+                <a class="nav-link navbar-link-custom" href="favorites.html">Favorites</a>
               </li>
             </ul>
 
-            <a href="../../index.html" class="btn btn-outline"> ← Back to Home </a>
+            <a href="../../index.html" class="btn btn-outline">
+              ← Back to Home
+            </a>
           </div>
         </div>
       </nav>
@@ -123,8 +125,15 @@
 
             <!-- Action buttons -->
             <div class="mt-4">
-              <button class="btn btn-outline me-2">Add to Favorites</button>
-              <a href="../../index.html" class="btn btn-outline">Back to List</a>
+              <button
+                class="btn btn-outline me-2 btn-favorite"
+                onclick="toggleFavorite()"
+              >
+                Add to Favorites
+              </button>
+              <a href="../../index.html" class="btn btn-secondary"
+                >Back to List</a
+              >
             </div>
           </div>
         </div>
