@@ -85,4 +85,8 @@ h6 {
   color: var(--white);
 }
 
+/* Search Page */
+.search-query {
+  color: var(--color-accent-cyan);
+}
 
